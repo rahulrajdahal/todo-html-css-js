@@ -1,0 +1,90 @@
+body,
+html,
+:root,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 20rem;
+  height: 30rem;
+  border-radius: 2rem;
+  border: 1px solid rgb(34, 36, 192);
+  padding: 2rem;
+  position: fixed;
+  top: 10rem;
+  left: 38%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.todo__active {
+  border-bottom: 4px solid rgb(34, 36, 192);
+}
+.active__todo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+ul {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+li {
+  list-style-type: none;
+  display: flex;
+  gap: 0.25rem;
+}
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.tab_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.tab:hover {
+  cursor: pointer;
+}
+.active_tab {
+  border-bottom: 4px solid rgb(34, 36, 192);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.todo__container {
+  height: 15rem;
+  overflow-y: scroll;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo__item__span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

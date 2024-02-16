@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Todo app created with html css and js" />
+    <!-- Import icons from meistericons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/meistericons@latest/fonts/mni.css"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Todo App - HTML, CSS and JS</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Todos</h1>
+      <!-- Form to add a task -->
+      <form class="">
+        <input
+          type="text"
+          name="todo"
+          id="todo"
+          placeholder="+ Add New Todo"
+          name="Take a walk"
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <!-- Tasks Tabs -->
+      <div class="tab_container">
+        <span class="active_tab tab">Remaning Todos</span>
+        <span class="tab">Completed Todos</span>
+      </div>
+
+      <strong class="active__todo">Remaning Todos</strong>
+      <!-- Task List -->
+      <ul class="todo__container"></ul>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
