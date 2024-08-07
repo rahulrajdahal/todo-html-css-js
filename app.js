@@ -62,14 +62,14 @@ const createTodoItem = (task, isCompleted = false) => {
   newTodoSpan.classList.add("todo__item__span");
   const newTodo = document.createElement("label");
   const input = document.createElement("input");
-  const deleteIcon = document.createElement("i");
-  deleteIcon.classList.add("mni-delete-aB");
+  // const deleteIcon = document.createElement("i");
+  // deleteIcon.classList.add("mni-delete-aB");
 
-  // Delete Task Click Event Listner.
-  deleteIcon.addEventListener("click", () => {
-    removeTodo(task);
-    newListItem.remove();
-  });
+  // // Delete Task Click Event Listner.
+  // deleteIcon.addEventListener("click", () => {
+  //   removeTodo(task);
+  //   newListItem.remove();
+  // });
 
   if (isCompleted) {
     input.checked = true;
@@ -100,7 +100,7 @@ const createTodoItem = (task, isCompleted = false) => {
   newListItem.appendChild(newTodoSpan);
   newTodoSpan.appendChild(input);
   newTodoSpan.appendChild(newTodo);
-  newListItem.appendChild(deleteIcon);
+  // newListItem.appendChild(deleteIcon);
   newTodo.innerHTML = task;
   todoContainer.appendChild(newListItem);
   if (!todos.length) {

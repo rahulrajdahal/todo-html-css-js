@@ -1,3 +1,14 @@
+:root {
+  --primary-100: rgba(0, 34, 255, 0.11);
+  --primary-200: rgba(0, 34, 255, 0.12);
+  --primary-300: rgba(0, 34, 255, 0.15);
+  --primary-700: rgba(0, 34, 255, 0.7);
+  --text-900: rgba(0, 0, 0, 0.88);
+  --text-300: rgba(223, 236, 255, 0.27);
+  --text-200: #fbfbfe;
+  --text-100: #f8f0f0;
+}
+
 body,
 html,
 :root,
@@ -8,28 +19,92 @@ html,
 }
 
 .container {
-  width: 20rem;
-  height: 30rem;
-  border-radius: 2rem;
-  border: 1px solid rgb(34, 36, 192);
-  padding: 2rem;
+  background-color: var(--text-300);
+  border-radius: 24px;
+  padding: 32px;
   position: fixed;
-  top: 10rem;
-  left: 38%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 8px 12px 50px var(--primary-300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 324px;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.todo_input_container {
+  gap: 12px;
+  display: flex;
+  width: 100%;
+}
+.todo_input {
+  background-color: var(--primary-100);
+  outline: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--text-900);
+  width: 100%;
+}
+.todo_add_button {
+  padding: 8px 10px;
+  background-color: var(--primary-700);
+  border-radius: 8px;
+  color: var(--text-100);
+  outline: none;
+  border: none;
+}
+.todos_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 24px;
 }
 
-div {
+.tabs_container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.tab {
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: var(--primary-200);
+  color: var(--primary-700);
+  border-radius: 8px;
+}
+
+.tab__active {
+  background-color: var(--primary-700);
+  color: var(--text-100);
+}
+
+.todo__container {
+  max-height: 15rem;
+  overflow-y: scroll;
+  width: 100%;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  justify-content: space-between;
+  background-color: var(--text-200);
+  gap: 2px;
+  padding: 10px 12px;
+  box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 100%;
 }
 
 .todo__active {
@@ -55,34 +130,11 @@ label {
   font-size: 1rem;
   font-weight: 500;
 }
-.tab_container {
-  display: flex;
-  gap: 1rem;
-}
 
-.tab {
-  font-weight: 600;
-  font-size: 0.85rem;
-}
 .tab:hover {
   cursor: pointer;
 }
-.active_tab {
-  border-bottom: 4px solid rgb(34, 36, 192);
-  font-weight: 700;
-  font-size: 1rem;
-}
 
-.todo__container {
-  height: 15rem;
-  overflow-y: scroll;
-}
-
-.todo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .todo__item__span {
   display: flex;
   align-items: center;
