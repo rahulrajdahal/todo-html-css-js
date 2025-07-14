@@ -14,8 +14,9 @@ html,
   border: 1px solid rgb(34, 36, 192);
   padding: 2rem;
   position: fixed;
-  top: 10rem;
-  left: 38%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1 {
