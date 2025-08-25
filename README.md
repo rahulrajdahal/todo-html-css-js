@@ -1,4 +1,4 @@
-# [Todo List with HTML CSS and JS](https://todo-html-css-js.vercel.app/). Track your tasks.
+# [Todo List with HTML CSS and JS](https://rahulrajdahal.github.io/todo-html-css-js). Track your tasks
 
 ## 🏗 Installation
 
@@ -22,12 +22,11 @@ cd todo-html-css-js
 
 ## Preview
 
-[![Todo with html css and js](./screenshots/todo-with-html-css-js.png)](https://todo-with-html-css-js.vercel.app/)
-![Todo with html css and js - completed todos](./screenshots/completed-category.png)
+[![Todo with html css and js](./screenshots/todos.png)](https://rahulrajdahal.github.io/todo-html-css-js)
 
 ## 🚀 Project Structure
 
-Inside of project [Todo list with html css and js](https://todo-html-css-js.vercel.app), you'll see the following folders and files:
+Inside of project [Todo list with html css and js](https://rahulrajdahal.github.io/todo-html-css-js), you'll see the following folders and files:
 
 ```text
 /
