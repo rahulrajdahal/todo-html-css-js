@@ -80,11 +80,6 @@ html,
   border-radius: 8px;
 }
 
-.tab__active {
-  background-color: var(--primary-700);
-  color: var(--text-100);
-}
-
 .todo__container {
   max-height: 15rem;
   overflow-y: scroll;
@@ -110,9 +105,11 @@ html,
 .todo__active {
   border-bottom: 4px solid rgb(34, 36, 192);
 }
-.active__todo {
-  font-size: 1.25rem;
+.tab__active {
+  font-size: 1rem;
   font-weight: 600;
+  background-color: var(--primary-700);
+  color: var(--text-100);
 }
 
 ul {
