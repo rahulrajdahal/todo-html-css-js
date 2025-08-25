@@ -6,16 +6,36 @@ let todos = [
 ];
 
 const todoContainer = document.querySelector(".todo__container");
-const remainingTodoTab = document.querySelectorAll(".tab")[0];
-const completedTodoTab = document.querySelectorAll(".tab")[1];
+const allTodosTab = document.querySelectorAll(".tab").item(0);
+const remainingTodoTab = document.querySelectorAll(".tab").item(1);
+const completedTodoTab = document.querySelectorAll(".tab").item(2);
 
-const todoHeader = document.querySelector(".active__todo");
+allTodosTab.addEventListener("click", () => {
+  if (remainingTodoTab.classList.contains("tab__active")) {
+    remainingTodoTab.classList.remove("tab__active");
+    remainingTodoTab.innerHTML = "Remaining";
+  }
+  if (completedTodoTab.classList.contains("tab__active")) {
+    completedTodoTab.classList.remove("tab__active");
+    completedTodoTab.innerHTML = "Completed";
+  }
+  allTodosTab.classList.add("tab__active");
+  clearTodoList();
+  todos.forEach((todo) => {
+    createTodoItem(todo.title, todo.completed);
+  });
+});
 
-// RemainingTasks event listerner.
 remainingTodoTab.addEventListener("click", () => {
-  completedTodoTab.classList.remove("active_tab");
-  remainingTodoTab.classList.add("active_tab");
-  todoHeader.innerHTML = "Remaining Todos";
+  if (allTodosTab.classList.contains("tab__active")) {
+    allTodosTab.classList.remove("tab__active");
+  }
+  if (completedTodoTab.classList.contains("tab__active")) {
+    completedTodoTab.classList.remove("tab__active");
+    completedTodoTab.innerHTML = "Completed";
+  }
+  remainingTodoTab.classList.add("tab__active");
+  remainingTodoTab.innerHTML = "Remaining Todos";
   clearTodoList();
   todos
     .filter(({ completed }) => !completed)
@@ -24,14 +44,19 @@ remainingTodoTab.addEventListener("click", () => {
     });
 });
 
-// CompletedTasks event listener.
 completedTodoTab.addEventListener("click", () => {
-  remainingTodoTab.classList.remove("active_tab");
-  completedTodoTab.classList.add("active_tab");
-  todoHeader.innerHTML = "Completed Todos";
+  if (allTodosTab.classList.contains("tab__active")) {
+    allTodosTab.classList.remove("tab__active");
+  }
+  if (remainingTodoTab.classList.contains("tab__active")) {
+    remainingTodoTab.classList.remove("tab__active");
+    remainingTodoTab.innerHTML = "Remaining";
+  }
+  completedTodoTab.classList.add("tab__active");
+  completedTodoTab.innerHTML = "Completed Todos";
   clearTodoList();
   todos
-    .filter(({ completed }) => completed === true)
+    .filter(({ completed }) => completed)
     .forEach((completedTodo) => {
       createTodoItem(completedTodo.title, true);
     });
@@ -75,6 +100,7 @@ const createTodoItem = (task, isCompleted = false) => {
     input.checked = true;
     newListItem.style.textDecoration = "line-through";
   } else {
+    newListItem.style.textDecoration = "none";
     input.checked = false;
   }
 
@@ -93,7 +119,10 @@ const createTodoItem = (task, isCompleted = false) => {
       currentTodo.completed = false;
       e.target.parentElement.style.textDecoration = "none";
     }
-    newListItem.remove();
+
+    if (!allTodosTab.classList.contains("tab__active")) {
+      newListItem.remove();
+    }
   };
 
   input.name = task;
@@ -119,7 +148,7 @@ const addTodo = (e) => {
 
   const todo = document.getElementById("todo").value;
 
-  if (todo.length > 0 && remainingTodoTab.classList.contains("active_tab")) {
+  if (todo.length > 0 && !completedTodoTab.classList.contains("active_tab")) {
     todos.push({ title: todo, completed: false });
     createTodoItem(todo);
   }

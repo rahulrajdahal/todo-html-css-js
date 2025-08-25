@@ -15,28 +15,30 @@
   </head>
   <body>
     <main class="container">
-      <h1>Todos</h1>
       <!-- Form to add a task -->
-      <form class="">
+      <form class="todo_input_container">
         <input
           type="text"
           name="todo"
           id="todo"
-          placeholder="+ Add New Todo"
+          placeholder="Add Todo..."
           name="Take a walk"
+          class="todo_input"
         />
-        <button type="submit">Add</button>
+        <button type="submit" class="todo_add_button">Add</button>
       </form>
 
-      <!-- Tasks Tabs -->
-      <div class="tab_container">
-        <span class="active_tab tab">Remaning Todos</span>
-        <span class="tab">Completed Todos</span>
-      </div>
+      <div class="todos_container">
+        <!-- Tasks Tabs -->
+        <div class="tabs_container">
+          <span class="tab__active tab">All</span>
+          <span class="tab">Remaning</span>
+          <span class="tab">Completed</span>
+        </div>
 
-      <strong class="active__todo">Remaning Todos</strong>
-      <!-- Task List -->
-      <ul class="todo__container"></ul>
+        <!-- Task List -->
+        <ul class="todo__container"></ul>
+      </div>
     </main>
 
     <script src="./app.js"></script>
